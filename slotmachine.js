@@ -9,6 +9,7 @@
 		this.reelRadius = 200; // px
 		this.slideDegrees = 360/this.slideCount;
 		this.winOverlayDelay = 4000;
+		this._winTimeout;
 
 		this._initializeDOM();
 		this._generateCSS();
@@ -108,9 +109,13 @@
 			}
 		}
 
+		if (this._winTimeout){
+			clearTimeout(this._winTimeout);
+		}
+
 		if (winner != ""){
 
-			setTimeout(function(){
+			this._winTimeout = setTimeout(function(){
 				var overlay_html = "";
 				overlay_html  = "<div class='winner-overlay-container'>";
 				overlay_html += "   <div class='overlay'>";
