@@ -42,7 +42,6 @@
 	// generates the css that makes the slotmachine 3d-ified
 	SlotMachine.prototype._generateCSS = function() {
 		var transformProperty = Modernizr.prefixed('transform');
-		var transformOriginProperty = Modernizr.prefixed('transform-origin');
 		var relative_rotation_deg = this.slideDegrees; // deg
 
 		for (var reel_id = 0; reel_id < this.reelCount; reel_id++){
@@ -56,6 +55,7 @@
 		}
 		$('#' + this.id)[0].style[transformProperty] = 'translateZ(-' + this.reelRadius + 'px)'; 
 	}
+
 
 	// spins the reels in 3d! woo
 	SlotMachine.prototype.spin = function() {
@@ -82,6 +82,7 @@
 			
 			reel.style[transformProperty] = "rotateX( " + this.slideDegrees * slide_to_rotate + "deg)";
 
+			// TODO: come back and try to simplify this
 			reel_indices.push(9 - (this.slideDegrees * slide_to_rotate)%360 / this.slideDegrees % 9);
 		}
 
@@ -92,7 +93,7 @@
 	// boolean logic to detect winner and throw
 	// up basic overlay
 	SlotMachine.prototype._detectWinner = function(reel_indices){
-		var winner = "";
+		var winner;
 		if (reel_indices[0]%3 == reel_indices[1]%3 &&
 			reel_indices[1]%3 == reel_indices[2]%3){
 			// winner!
@@ -113,7 +114,7 @@
 			clearTimeout(this._winTimeout);
 		}
 
-		if (winner != ""){
+		if (winner){
 
 			this._winTimeout = setTimeout(function(){
 				var overlay_html = "";
