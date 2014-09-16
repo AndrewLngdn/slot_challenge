@@ -1,0 +1,174 @@
+body {
+  margin: 0px;
+  font-family: 'Raleway', sans-serif;
+  overflow: hidden;
+}
+
+div#outline {
+  height: 520px;
+  border: 1px solid grey;
+  width: 650px;
+  margin: auto;
+  margin-top: 40px;
+  top: 100px;
+}
+
+div#slotmachine-container {
+  width: 600px;
+  margin: auto;
+  position: relative;
+  top: 180px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
+  
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+}
+
+div.reel {
+
+  width: 175px;
+  height: 100px;
+  background-color:transparent;
+  display:inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+
+  -webkit-transition: -webkit-transform 4s;
+  -moz-transition: -moz-transform 4s;
+  -o-transition: -o-transform 4s;
+  transition: transform 4s;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+div.slide {
+  display: block;
+  position: absolute;
+  width: 175px;
+  height: 100px;
+  background-color: grey;
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  box-sizing: border-box;
+  border: 1px solid grey;
+
+}
+
+div#spin-button {
+  position: relative;
+  top: 350px;
+  width: 150px;
+  height: 50px;
+  margin: auto;
+  border: 1px solid grey;
+
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px; 
+}
+
+
+div.reel div.slide {
+  background-size: auto;
+}
+
+/* reel images */
+
+div.maker div.tea {
+  background-image: url('assets/teapot.jpg');
+}
+div.maker div.coffee {
+  background-image: url('assets/coffee-maker.jpg');
+}
+div.maker div.espresso {
+  background-image: url('assets/espresso-machine.jpg');
+}
+
+div.tool div.tea {
+  background-image: url('assets/tea-strainer.jpg');
+}
+div.tool div.coffee {
+  background-image: url('assets/coffee-filters.jpg');
+}
+div.tool div.espresso {
+  background-image: url('assets/tamper.jpg');
+}
+
+div.ingredient div.tea {
+  background-image: url('assets/tea-leaves.jpg');
+}
+div.ingredient div.coffee {
+  background-image: url('assets/coffee-beans.jpg');
+}
+div.ingredient div.espresso {
+  background-image: url('assets/espresso-beans.jpg');
+}
+
+/* overlay */
+
+div.winner-overlay-container {
+  position:absolute;
+  left:0;
+  right:0;
+  width:100%;
+  height: 100%;
+  margin-right:auto;
+  background-color: white;
+  box-sizing: border-box;
+  color: grey;
+  z-index:5;
+  text-align: center;
+  opacity: 0.97;
+  vertical-align: center;
+}
+
+div.winner-overlay-container div.overlay {
+    width: 400px;
+    height: 200px;
+    background-color: transparent;
+    border: 1px solid black;
+    box-sizing: border-box;
+
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+div.winner-text {
+  color: black;
+  font-size: 30px;
+}
+
+div.winner-coffee, div.winner-tea, div.winner-espresso{
+  background-repeat: no-repeat;
+  height: 130px;
+  width: 130px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+div.winner-coffee{
+  background-image: url('assets/coffee-cup.jpg');
+}
+div.winner-tea{
+  background-image: url('assets/teacup.jpg');
+}
+div.winner-espresso{
+  background-image: url('assets/espresso.jpg');
+}
